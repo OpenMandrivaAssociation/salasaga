@@ -29,34 +29,14 @@ visually impressive, useful learning material.
 %install
 rm -rf %{buildroot}
 %{makeinstall_std}
+%find_lang %name
 
 %clean
 rm -rf %{buildroot}
 
-%files
+%files -f %name.lang
 %defattr(-,root,root)
-/usr/bin/salasaga
-/usr/bin/salasaga_screencapture
-/usr/share/pixmaps/salasaga-icon.png
-/usr/share/applications/salasaga.desktop
-/usr/share/salasaga
-/usr/share/locale/ar/LC_MESSAGES/salasaga.mo
-/usr/share/locale/bg/LC_MESSAGES/salasaga.mo
-/usr/share/locale/ca/LC_MESSAGES/salasaga.mo
-/usr/share/locale/el/LC_MESSAGES/salasaga.mo
-/usr/share/locale/en_AU/LC_MESSAGES/salasaga.mo
-/usr/share/locale/en_GB/LC_MESSAGES/salasaga.mo
-/usr/share/locale/es/LC_MESSAGES/salasaga.mo
-/usr/share/locale/fil/LC_MESSAGES/salasaga.mo
-/usr/share/locale/fr/LC_MESSAGES/salasaga.mo
-/usr/share/locale/gl/LC_MESSAGES/salasaga.mo
-/usr/share/locale/id/LC_MESSAGES/salasaga.mo
-/usr/share/locale/it/LC_MESSAGES/salasaga.mo
-/usr/share/locale/nb/LC_MESSAGES/salasaga.mo
-/usr/share/locale/pt/LC_MESSAGES/salasaga.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/salasaga.mo
-/usr/share/locale/ro/LC_MESSAGES/salasaga.mo
-/usr/share/locale/ru/LC_MESSAGES/salasaga.mo
-/usr/share/locale/tr/LC_MESSAGES/salasaga.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/salasaga.mo
-
+%{_bindir}/*
+%{_datadir}/pixmaps/salasaga-icon.png
+%{_datadir}/applications/salasaga.desktop
+%{_datadir}/salasaga
