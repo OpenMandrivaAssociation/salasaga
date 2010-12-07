@@ -2,7 +2,7 @@ Summary: An Integrated Development Environment for producing Elearning
 Name: salasaga
 Version: 0.8.0
 %define beta alpha7
-Release: %mkrel -c %beta 1
+Release: %mkrel -c %beta 2
 License: LGPL3+
 Group: Education
 URL: http://www.salasaga.org
