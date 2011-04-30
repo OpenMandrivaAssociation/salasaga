@@ -2,11 +2,12 @@ Summary: An Integrated Development Environment for producing Elearning
 Name: salasaga
 Version: 0.8.0
 %define beta alpha7
-Release: %mkrel -c %beta 2
+Release: %mkrel -c %beta 3
 License: LGPL3+
 Group: Education
 URL: http://www.salasaga.org
 Source0: http://www.salasaga.org/downloads/%beta/%{name}-%{version}-%{beta}.tar.bz2
+Patch0: salasaga-0.8.0-alpha7-libnotify0.7.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: ming-devel
 BuildRequires: gtk+2-devel
@@ -20,6 +21,7 @@ visually impressive, useful learning material.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p0
 
 %build
 ./autogen.sh
