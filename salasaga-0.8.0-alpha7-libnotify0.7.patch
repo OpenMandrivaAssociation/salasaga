@@ -1,0 +1,29 @@
+--- screen_capture/salasaga_screencapture.c.orig	2011-04-30 17:53:33.000000000 +0200
++++ screen_capture/salasaga_screencapture.c	2011-04-30 17:54:12.000000000 +0200
+@@ -421,7 +421,7 @@
+ 		if (1 < screenshot_delay)
+ 		{
+ 			g_string_printf(message, _("Screenshot in %u seconds"), screenshot_delay);
+-			status_notify = notify_notification_new(message->str, NULL, NULL, NULL);
++			status_notify = notify_notification_new(message->str, NULL, NULL);
+ 		}
+ 
+ 		// Delay for the requested number of seconds before the screenshot
+@@ -470,7 +470,7 @@
+ 		if (2 < screenshot_delay)
+ 		{
+ 			g_string_printf(message, _("Screenshot in %u seconds"), screenshot_delay);
+-			status_notify = notify_notification_new(message->str, NULL, NULL, NULL);
++			status_notify = notify_notification_new(message->str, NULL, NULL);
+ 			notify_notification_set_hint_string(status_notify, "x-canonical-private-synchronous", "");
+ 			notify_notification_show(status_notify, &error);
+ 		}
+@@ -505,7 +505,7 @@
+ 	// * Visually let the user know the screenshot was taken *
+ 
+ 	// Create a new status notification message
+-	status_notify = notify_notification_new(_("Screenshot taken"), NULL, NULL, NULL);
++	status_notify = notify_notification_new(_("Screenshot taken"), NULL, NULL);
+ 	if (TRUE == libnotify_is_notify_osd)
+ 	{
+ 		// Notify-OSD needs special treatment in order to display a notify message for only
