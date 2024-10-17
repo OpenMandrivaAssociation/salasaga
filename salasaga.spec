@@ -5,7 +5,7 @@ Version: 0.8.0
 Release: %mkrel -c %beta 3
 License: LGPL3+
 Group: Education
-URL: http://www.salasaga.org
+URL: https://www.salasaga.org
 Source0: http://www.salasaga.org/downloads/%beta/%{name}-%{version}-%{beta}.tar.bz2
 Patch0: salasaga-0.8.0-alpha7-libnotify0.7.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
